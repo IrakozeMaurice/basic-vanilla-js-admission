@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.auth {
+    display: none;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.guest {
+    display: none;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.container {
+    width: 80%;
+    padding: 2rem;
+    margin: auto;
+}
