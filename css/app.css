@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    height: 100vh;
+}
+
 .auth {
     display: none;
     justify-content: flex-end;
@@ -20,6 +24,7 @@
     width: 80%;
     padding: 2rem;
     margin: auto;
+    background-color: #d7f7ffd7;
 }
 
 input,
@@ -38,7 +43,9 @@ input:focus {
 .format {
     text-align: center;
     font-size: .9rem;
-    color: #167ba3;
+    color: #104d5f;
+    font-weight: 400;
+    margin-top: 2px;
 }
 
 .none {
@@ -51,4 +58,111 @@ input:focus {
 
 .invalid {
     color: red;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.space-x-1 {
+    gap: 1rem;
+}
+
+.self-start {
+    align-self: flex-start;
+}
+
+.mt-1 {
+    margin-top: 1px;
+}
+
+.mt-2 {
+    margin-top: 2px;
+}
+
+.mt-3 {
+    margin-top: 3px;
+}
+
+.title p {
+    font-size: 1.5rem;
+    color: #104d5f;
+}
+
+.title span {
+    color: #690e0e;
+}
+
+.right p {
+    text-align: right;
+    color: #690e0e;
+    font-weight: bold;
+}
+
+.banner {
+    margin-bottom: 2rem;
+}
+
+.content {
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.topbar {
+    background-color: #104d5f;
+    padding: 1rem;
+
+}
+
+.topbar a {
+    color: #fff;
+
+}
+
+.form_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.btn {
+    background-color: #104d5f;
+    color: #fff;
+    padding: 10px 0px;
+    border-radius: 15px;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #0e3f4e;
+    cursor: pointer;
+}
+
+input,
+select {
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+}
+
+.form_register {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.hidden {
+    visibility: hidden;
 }

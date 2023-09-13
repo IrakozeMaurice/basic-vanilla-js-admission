@@ -7,86 +7,112 @@
     <link rel="stylesheet" href="css/app.css" />
   </head>
   <body class="container">
-    <h1>Register</h1>
-    <br />
+    <div class="banner flex">
+      <div class="left flex space-x-1">
+        <img src="img/logo.png" width="100" height="100" alt="college logo" />
+        <div class="title self-start mt-2">
+          <p>LOREM IPSUM</p>
+          <span>COLLEGE</span>
+        </div>
+      </div>
 
-    <ul class="validationError none"></ul>
-    <div id="registration_error" class="none"></div>
-    <form id="register_form" onsubmit="return false">
-      <div>
-        <label for="student_id">Student ID</label>
-        <input type="text" id="student_id" name="student_id" />
-        <span class="student_id format none">5 digits Example: 21435</span>
+      <div class="right">
+        <p>LOREM IPSUM COLLEGE</p>
+        <p>123 Awd ave Kigali 8577</p>
+        <p>email@example.ocm</p>
+        <p>www.loremcollege.com</p>
+        <p>(250)788 45200</p>
       </div>
-      <br />
-      <div>
-        <label for="firstname">Firstname</label>
-        <input type="text" id="firstname" name="firstname" />
-        <span class="firstname format none">at least 2 characters(max 30)</span>
-      </div>
-      <br />
-      <div>
-        <label for="lastname">Lastname</label>
-        <input type="text" id="lastname" name="lastname" />
-        <span class="lastname format none">at least 2 characters(max 30)</span>
-      </div>
-      <br />
-      <div>
-        <label for="faculty">Faculty</label>
-        <select name="faculty" id="faculty">
-          <option disabled selected hidden>Please select</option>
-        </select>
-      </div>
-      <br />
-      <div>
-        <label for="department">Department</label>
-        <select name="department" id="department">
-          <option value="">Please select</option>
-        </select>
-      </div>
-      <br />
-      <div>
-        <label for="address">Address</label>
-        <input type="text" id="address" name="address" />
-        <span class="address format none">at least 2 characters(max 30)</span>
-      </div>
-      <br />
-      <div>
-        <label for="phone_number">Phone number</label>
-        <input type="text" id="phone_number" name="phone_number" />
-        <span class="phone_number format none"
-          >10 digit phone number starting with 078, 079, 073 or 072</span
-        >
-      </div>
-      <br />
-      <div>
-        <label for="email">email</label>
-        <input type="text" id="email" name="email" />
-        <span class="email format none">Example: johndoe@example.com</span>
-      </div>
-      <br />
-      <div>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" />
-        <span class="password format none">at least 6 characters</span>
-      </div>
-      <div>
+    </div>
+
+    <div class="form_register">
+      <h1>Sign up</h1>
+      <ul class="validationError none"></ul>
+      <div id="registration_error" class="hidden"></div>
+      <form id="register_form" onsubmit="return false">
+        <div>
+          <label for="student_id">Student ID</label>
+          <input type="text" id="student_id" name="student_id" />
+          <span class="student_id format hidden">5 digits Example: 21435</span>
+        </div>
         <br />
         <div>
-          <label for="confirm_password">Confirm password</label>
-          <input
-            type="password"
-            id="confirm_password"
-            name="confirm_password"
-          />
-          <span class="confirm_password format none"
-            >at least 6 characters</span
+          <label for="firstname">Firstname</label>
+          <input type="text" id="firstname" name="firstname" />
+          <span class="firstname format hidden"
+            >at least 2 characters(max 30)</span
           >
         </div>
         <br />
-        <button id="register_btn" type="submit">Sign up</button>
-      </div>
-    </form>
+        <div>
+          <label for="lastname">Lastname</label>
+          <input type="text" id="lastname" name="lastname" />
+          <span class="lastname format hidden"
+            >at least 2 characters(max 30)</span
+          >
+        </div>
+        <br />
+        <div>
+          <label for="faculty">Faculty</label>
+          <select name="faculty" id="faculty">
+            <option disabled selected hidden>Please select</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label for="department">Department</label>
+          <select name="department" id="department">
+            <option value="">Please select</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" />
+          <span class="address format hidden"
+            >at least 2 characters(max 30)</span
+          >
+        </div>
+        <br />
+        <div>
+          <label for="phone_number">Phone number</label>
+          <input type="text" id="phone_number" name="phone_number" />
+          <span class="phone_number format hidden"
+            >10 digit phone number starting with 078, 079, 073 or 072</span
+          >
+        </div>
+        <br />
+        <div>
+          <label for="email">email</label>
+          <input type="text" id="email" name="email" />
+          <span class="email format hidden">Example: johndoe@example.com</span>
+        </div>
+        <br />
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" />
+          <span class="password format hidden">at least 6 characters</span>
+        </div>
+        <div>
+          <br />
+          <div>
+            <label for="confirm_password">Confirm password</label>
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+            />
+            <span class="confirm_password format hidden"
+              >at least 6 characters</span
+            >
+          </div>
+          <br />
+          <button class="btn btn-block" id="register_btn" type="submit">
+            Sign up
+          </button>
+        </div>
+      </form>
+    </div>
 
     <script src="js/auth.js"></script>
     <script src="js/app.js"></script>

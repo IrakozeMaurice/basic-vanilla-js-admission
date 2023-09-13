@@ -193,10 +193,10 @@ var view = {
                         let input = document.getElementById(field);
                         if (!validateField(field,input.value) && input.value.length) {
                             input.classList.add('invalid');
-                            document.querySelector('.'+field).classList.remove('none');
+                            document.querySelector('.'+field).classList.remove('hidden');
                         }else{
                             input.classList.remove('invalid');
-                            document.querySelector('.'+field).classList.add('none');
+                            document.querySelector('.'+field).classList.add('hidden');
                         }
                     }
                 }
