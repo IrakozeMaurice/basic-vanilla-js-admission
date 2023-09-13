@@ -1,14 +1,13 @@
 
 var authenticator = (function(authenticator){
     
-    function attempt(email,password){
+    function attempt(id,password){
         // attempt to log user in
-
-        if('validation pass'){
-            // TODO - VALIDATE USER CREDENTIALS FROM LOCAL STORAGE
-            return true;
+        let user = JSON.parse(localStorage.getItem(id));
+        if(user && user.password === password){
+            return user;
         }else{
-            return false;
+            return null;
         }
     }
 
@@ -17,16 +16,17 @@ var authenticator = (function(authenticator){
 
             return{
                 login: function(user){
-                    // logs user in if is guest
-
                     if (this.guest()) {
                         // verify credentials
-                        if (attempt(user.email,user.password)) {
+                        let auth_user = attempt(user.student_id,user.password);
+                        if (auth_user) {
                             // credentials valid
-                            user = JSON.stringify(user);
-                            sessionStorage.setItem('session_user',user);
+                            auth_user = JSON.stringify(auth_user);
+                            sessionStorage.setItem('session_user',auth_user);
                             session_user = sessionStorage.getItem('session_user');
                             return true;
+                        }else{
+                            return false;
                         }
                     }
                 },

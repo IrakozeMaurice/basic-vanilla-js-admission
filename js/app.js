@@ -105,6 +105,24 @@ var controller = {
         }
     },
 
+    // login a user
+    loginUser: function (formData) {
+        const user = {};
+        for (const [key,value] of formData) {
+                user[key] = value;
+        }
+
+        const auth = authenticator.init();
+            if (auth.guest()) {
+                if (!auth.login(user)) {
+                    // display error
+                    view.displayError(['login_error','INVALID CREDENTIALS']);
+                    return;
+                }
+                this.redirect('dashboard.html');
+            }
+    },
+
     // validate form - TODO
     validate: function (formData) {
         const errors = [];
@@ -142,13 +160,12 @@ var view = {
 
             document.getElementById('login_form').addEventListener('submit',function (e) {
                 e.preventDefault();
-
-                // TODO - handle login form submitted
+                
                 // get form data
+                const login_form = document.getElementById('login_form');
+                const formData = new FormData(login_form);
                 // call controller action
-
-                console.log('login form submitted');
-                test.login();
+                controller.loginUser(formData);
             });
         }else if (url.includes('register.html')) {
             // add faculties to select
@@ -284,6 +301,9 @@ var view = {
         if (errors[0] === 'registration_error') {
             document.getElementById('registration_error').classList.remove('none');
             document.getElementById('registration_error').textContent = errors[1];
+        }else if (errors[0] === 'login_error') {
+            document.getElementById('login_error').classList.remove('none');
+            document.getElementById('login_error').textContent = errors[1];
         }else{
             const errorDiv = document.querySelector('.validationError');
             errors.forEach(error => {
@@ -313,4 +333,3 @@ var view = {
 document.addEventListener('DOMContentLoaded',function () {
     controller.initApp();
 });
-
